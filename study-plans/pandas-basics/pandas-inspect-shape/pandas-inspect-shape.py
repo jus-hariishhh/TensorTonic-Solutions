@@ -9,7 +9,7 @@ def inspect_dataframe(data: dict) -> dict:
     d["rows"]=int(len(df))
     d["cols"]=int(df.size/len(df))
     d["columns"]=df.columns.tolist()
-    d["dtypes"] = df.dtypes.astype(str).to_dict()
+    d["dtypes"] = df.dtypes.astype("str").to_dict()
     d["total_values"]=int(df.size)
     return d
     pass
