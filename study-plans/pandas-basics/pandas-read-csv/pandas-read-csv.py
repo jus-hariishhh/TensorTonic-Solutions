@@ -8,6 +8,6 @@ def create_dataframe(data: dict) -> dict:
     df=pd.DataFrame(data)
     d["data"]=df.to_dict("list")
     d["shape"]=list(df.shape)
-    d["columns"]=df.columns.tolist()
+    d["columns"]=list(df.columns)
     return d
     pass
