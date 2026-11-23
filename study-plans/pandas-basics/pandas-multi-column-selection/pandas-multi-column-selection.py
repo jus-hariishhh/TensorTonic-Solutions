@@ -7,6 +7,5 @@ def select_columns(data: dict, columns: list) -> dict:
     df=pd.DataFrame(data)
     d={}
     new_df=df.loc[:,columns]
-    o=new_df.to_dict("list")
-    return o
+    return new_df.to_dict("list")
     pass
