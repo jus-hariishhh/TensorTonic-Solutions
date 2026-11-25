@@ -1,0 +1,2 @@
+-- Returns: name, city, total_spent.
+select customers.name, customers.city, coalesce(sum(orders.amount), 0) as total_spent from customers left join orders on customers.id=orders.customer_id group by customers.id, customers.name, customers.city order by total_spent desc, name;
