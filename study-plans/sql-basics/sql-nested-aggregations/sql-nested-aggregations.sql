@@ -1,0 +1,2 @@
+-- Returns: avg_daily_orders, avg_daily_revenue, busiest_day_orders.
+select round(avg(daily_orders),2) as avg_daily_orders, round(avg(daily_revenue),2) as avg_daily_revenue, max(daily_orders) as busiest_day_orders from (select count(customer) as daily_orders, sum(amount) as daily_revenue from orders group by order_date);
