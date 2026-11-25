@@ -1,0 +1,2 @@
+-- Returns: username, experiment_name, variant, revenue.
+select a.username, b.experiment_name, b.variant, c.revenue from users a join experiment_assignments b on a.id=b.user_id join conversions c on a.id=c.user_id order by b.experiment_name, c.revenue desc, a.username;
