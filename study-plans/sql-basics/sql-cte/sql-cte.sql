@@ -1,0 +1,2 @@
+-- Returns: customer, order_count, total_spent.
+with cte as(select customer, count(customer) as order_count, sum(amount) as total_spent from orders group by customer having order_count>1) select* from cte order by total_spent desc, customer;
