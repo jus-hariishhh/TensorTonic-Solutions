@@ -1,0 +1,2 @@
+-- Returns: name, price, vs_avg.
+select name, price, round(products.price-(select avg(price) from products),2) as vs_avg from products where products.id in (select product_id from sales) order by vs_avg desc, products.name;
