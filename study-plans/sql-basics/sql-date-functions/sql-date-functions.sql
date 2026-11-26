@@ -1,0 +1,2 @@
+-- Returns: username, signup_date, signup_year, signup_month, signup_quarter, cohort_month.
+select username, signup_date, extract(year from signup_date) as signup_year,extract(month from signup_date) as signup_month, extract(quarter from signup_date) as signup_quarter, date_trunc('month', signup_date) as cohort_month from signups order by signup_date,username;
