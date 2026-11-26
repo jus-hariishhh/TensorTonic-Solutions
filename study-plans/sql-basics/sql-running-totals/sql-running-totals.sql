@@ -1,0 +1,2 @@
+-- Returns: account, txn_date, amount, running_total.
+select account, txn_date, amount, sum(amount) over (partition by account order by txn_date, id rows between unbounded preceding and current row) as running_total from transactions order by account, txn_date, id;
