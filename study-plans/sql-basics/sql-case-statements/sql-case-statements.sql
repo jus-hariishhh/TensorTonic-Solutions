@@ -1,0 +1,2 @@
+-- Returns: username, session_count, activity_level, platform_type.
+select username, session_count, case when session_count>=50 then 'Power' when session_count<50 and session_count>=10 then 'Casual' else 'Dormant' end as activity_level, case when platform='ios' or platform='android' then 'Mobile' when platform='web' or platform='desktop' then 'Desktop' else 'Other' end as platform_type from user_sessions order by case when activity_level='Power' then 1 when activity_level='Casual' then 2 when activity_level='Dormant' then 3 end,username;
